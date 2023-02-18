@@ -1,14 +1,15 @@
-<!--DOCUMENTO-->
-	<style >
-	body{
-		color: skyblue;
-	}
+body {
+    color: darkslategray;
+}
 
-	.rojo{
-		color: yellowgreen;
-	}
+.rojo {
+    color: red;
+}
 
-	#precioVerdes{
-		color:  seagreen;
-	}
-	</style>
+.rojo:hover {
+    color: tomato;
+}
+
+#precio_verdes {
+    color: seagreen;
+}

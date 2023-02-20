@@ -55,3 +55,6 @@ if (num = res) {
 } else {
     let correcto = prompt("INCORRECTO!!");
 }
+//EJERCICIO 3
+const arr =[];
+let num1 = Math.random();

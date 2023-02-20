@@ -1,0 +1,15 @@
+.block{
+	display:block;
+	border:1px solid #000;
+	padding:.5em
+}
+body{
+	margin:0 auto;
+	max-width:65em;
+	font-family:Georgia;
+	background-color: rgba(0, 125, 255, 0.14);
+}
+caption{
+	font-size: 20pt;
+	color: rgba(42, 41, 250, 0.77);
+}

@@ -39,5 +39,3 @@ if (pregunta == res) {
 } else {
     let incorrecto = alert("INCORRECTO!!    Te tardaste: " + total + " Segundos");
 }
-//EJERCICIO 3
-const arr = [];

@@ -61,12 +61,17 @@ document.write("<br> NÚMEROS NEGATIVOS: " + c1);
 document.write("<br> CEROS: " + c3);
 document.write("<br> NÚMEROS POSITIVOS: " + c2);
 //EJERCICIO 4
-const eje4 = [][];
-for (let i=1; i <= 10; i++){
-    let n1 = Math.floor(Math.random()*100+1);
-    eje4.push(n1);
-    for (let i=1; i <= 10; i++) {
-        let n2 = Math.floor(Math.random()*100+1);
-        eje4.push(n2);
+const eje4 = [];
+for (let i = 1; i < 10; i++){
+    eje4[i]=new Array(3);
+}
+document.write("<br /><br>EJERCICIO 4");
+for (let i=0; i<10; i++){
+        let namu = Math.floor(Math.random()*100+1);
+        eje4[i] = namu;
+        for (let e=0; e<3; e++){
+            let namus = Math.floor(Math.random()*100+1);
+            eje4[e] = namus;
     }
 }
+document.write("<br>"+eje4);

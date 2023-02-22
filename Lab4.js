@@ -27,10 +27,8 @@ let num1 = Math.floor(Math.random()*100+1);
 let num2 = Math.floor(Math.random()*100+1);
 let a = parseInt(num1);
 let b = parseInt(num2);
-//console.time("loop");
 var inicio = Date.now();
 let pregunta = prompt("Adivina: "+num1+"+ "+num2+"=","?");
-//console.timeEnd("loop");
 let fin = Date.now();
 let total = ((fin - inicio)/1000);
 let res = a+b;
@@ -38,4 +36,37 @@ if (pregunta == res) {
     let correcto = alert("CORRECTO!!     Te tardaste: " + total + " Segundos");
 } else {
     let incorrecto = alert("INCORRECTO!!    Te tardaste: " + total + " Segundos");
+}
+//EJERCICIO 3
+document.write("<br><br>EJERCICO 3");
+const eje3 = [];
+let min = Math.ceil(-100);
+let max = Math.floor(100);
+let c1 = 0;
+let c2 = 0;
+let c3 = 0;
+for (let i=1; i <= 10; i++){
+    let aleato = Math.floor(Math.random() * (max - min + 1) + min);
+    eje3.push(aleato); 
+    if (eje3[i-1] < 0) {
+        c1 += 1;
+    } if (eje3[i-1] > 0) {
+        c2 += 1;
+    }if (eje3[i-1] == 0){
+        c3 += 1;
+    }
+}
+document.write("<br>" + eje3);
+document.write("<br> NÚMEROS NEGATIVOS: " + c1);
+document.write("<br> CEROS: " + c3);
+document.write("<br> NÚMEROS POSITIVOS: " + c2);
+//EJERCICIO 4
+const eje4 = [][];
+for (let i=1; i <= 10; i++){
+    let n1 = Math.floor(Math.random()*100+1);
+    eje4.push(n1);
+    for (let i=1; i <= 10; i++) {
+        let n2 = Math.floor(Math.random()*100+1);
+        eje4.push(n2);
+    }
 }

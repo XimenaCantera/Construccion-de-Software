@@ -61,17 +61,28 @@ document.write("<br> NÚMEROS NEGATIVOS: " + c1);
 document.write("<br> CEROS: " + c3);
 document.write("<br> NÚMEROS POSITIVOS: " + c2);
 //EJERCICIO 4
-const eje4 = [];
-for (let i = 1; i < 10; i++){
-    eje4[i]=new Array(3);
-}
+/*
 document.write("<br /><br>EJERCICIO 4");
-for (let i=0; i<10; i++){
+let array4 = new Array(10);
+//Bucle para meter en cada posición otros array de 10
+for(let i=0; i<10; i++) {
+    array4[i] = new Array(10);
+}
+for (let i=0; i<2; i++){   
+    for (let e=0; e<10; e++){
+        let namus = Math.floor(Math.random()*100+1);
         let namu = Math.floor(Math.random()*100+1);
-        eje4[i] = namu;
-        for (let e=0; e<3; e++){
-            let namus = Math.floor(Math.random()*100+1);
-            eje4[e] = namus;
+        array4[i][e] = [namu][namus];
     }
 }
-document.write("<br>"+eje4);
+for(let i=0; i<10; i++) {
+    //Bucle que recorre el array que está en la posición i
+    for(let j=0; j<10; j++) {
+        document.write(array4[i][j]);
+    }
+}
+*/
+//EJERCICIO 5
+let resp = document.getElementById("eje5");
+document.write("El número " + resp + "es: ");
+resp.split("").reverse().join("");

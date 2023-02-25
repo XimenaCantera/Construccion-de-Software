@@ -1,5 +1,6 @@
 //Ximena Cantera Reséndiz
 //EJERCICIO 1
+document.write("<h2> Ejercicio 1 </h2>");
 let num = prompt("Dame un número",0);
 //CUADRADO
 const cuadradoo = [];
@@ -38,7 +39,7 @@ if (pregunta == res) {
     let incorrecto = alert("INCORRECTO!!    Te tardaste: " + total + " Segundos");
 }
 //EJERCICIO 3
-document.write("<br><br>EJERCICO 3");
+document.write("<h2> Ejercicio 3 </h2>");
 const eje3 = [];
 let min = Math.ceil(-100);
 let max = Math.floor(100);
@@ -60,29 +61,27 @@ document.write("<br>" + eje3);
 document.write("<br> NÚMEROS NEGATIVOS: " + c1);
 document.write("<br> CEROS: " + c3);
 document.write("<br> NÚMEROS POSITIVOS: " + c2);
+
 //EJERCICIO 4
-/*
-document.write("<br /><br>EJERCICIO 4");
-let array4 = new Array(10);
-//Bucle para meter en cada posición otros array de 10
-for(let i=0; i<10; i++) {
-    array4[i] = new Array(10);
-}
-for (let i=0; i<2; i++){   
-    for (let e=0; e<10; e++){
-        let namus = Math.floor(Math.random()*100+1);
-        let namu = Math.floor(Math.random()*100+1);
-        array4[i][e] = [namu][namus];
+let $tabla = [[15,0,44],[16,50,6]];
+let p1=0;
+let p2=0;
+for ($i in $tabla){
+    for ($j in $tabla[$i]){
+        if ($tabla[$i][$j] <= $tabla[0][2]) {
+            p1 += $tabla[$i][$j];
+        } else {
+           p2 += $tabla[$i][$j];
+        }
     }
 }
-for(let i=0; i<10; i++) {
-    //Bucle que recorre el array que está en la posición i
-    for(let j=0; j<10; j++) {
-        document.write(array4[i][j]);
-    }
-}
-*/
+let r1 = p1/3;
+let r2 = p2/3;
+document.getElementById("eje4.1").innerHTML = r1;
+document.getElementById("eje4.2").innerHTML = r2;
+
 //EJERCICIO 5
-let resp = document.getElementById("eje5");
-document.write("El número " + resp + "es: ");
-resp.split("").reverse().join("");
+document.write("<h2> Ejercicio 5 </h2>");
+let num5 = prompt("¿Qué número quieres invertir?",0);
+document.write("El número es: " + num5 + "<br>");
+document.write(num5.split("").reverse().join(""));

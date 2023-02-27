@@ -8,9 +8,10 @@
 </head>
 <body>
 	<h1>Xymna's Houl</h1>
+	<div onmouseout="normal(1);" onmouseover="hover(1);">
 	<table>
 		<caption>Catálogo</caption>
-		<tr>
+		<tr id="productos">
 			<th>ÁLBUMES</th>
 			<th>PRECIO $</th>
 			<th>CANTIDAD</th>
@@ -24,37 +25,66 @@
 		<tr>
 			<td>Oddinary - Stray Kids</td>
 			<td>$700</td>
-			<td><input id = "oddinary"  size="5" class="red-input"><br></td>
+			<td><input id = "oddinary"  size="5" onchange="cantidadProductos(this.value,700);"><br></td>
 			<td>Fresas con crema - Ingredientes extras</td>
 			<td>$20</td>
-			<td><input id = "fresas" size="5" class="red-input"></td>
+			<td><input id = "fresas" size="5" onchange="cantidadProductos(this.value,20);"></td>
 			<td>Blusa azul</td>
 			<td>$150</td>
-			<td><input id = "blusa" size="5" class="red-input"></td>
+			<td><input id = "blusa" size="5" onchange="cantidadProductos(this.value,150);"></td>
 		</tr>
 		<tr>
 			<td>The Most Beautiful Moment In Life - BTS</td>
 			<td>$600</td>
-			<td><input id = "tmbm" size="5" class="red-input"></td>
+			<td><input id = "tmbm" size="5" onchange="cantidadProductos(this.value,600);"></td>
 			<td>Pay de limón - Forma deseada</td>
 			<td>$140</td>
-			<td><input id = "payLimon" size="5" class="red-input"></td>
+			<td><input id = "payLimon" size="5" onchange="cantidadProductos(this.value,140);"></td>
 			<td>Pantalón negro</td>
 			<td>$230</td>
-			<td><input id = "pantalon" size="5" class="red-input"></td>
+			<td><input id = "pantalon" size="5" onchange="cantidadProductos(this.value,230);"></td>
 		</tr>
 		<tr>
 			<td>Superache - Conan Gray</td>
 			<td>$250</td>
-			<td><input id = "conan" size="5" class="red-input"></td>
+			<td><input id = "conan" size="5" onchange="cantidadProductos(this.value,250);"></td>
 			<td>Helado 1L- Convinado y de diferentes sabores</td>
 			<td>$50</td>
-			<td><input id = "helado" size="5" class="red-input"></td>
+			<td><input id = "helado" size="5" onchange="cantidadProductos(this.value,50);"></td>
 			<td>Chamarra mezclilla</td>
-			<td>$520</td>
-			<td><input id = "chamarra" size="5" class="red-input"></td>
+			<td id="cantidad">$520</td>
+			<td><input id = "chamarra" type="text" size="5" onchange="cantidadProductos(this.value,520);"></td>
 		</tr>
 	</table>
+	</div>
+
+	<div class="tooltip">Recuerda!!!<span class="tooltiptext">Disfrutar tus productos <3 :)</span>
+	</div><br><br>
+
+	<div>
+		<span>CANTIDAD DE PRODUCTOS: </span> <span id = "total"></span><br>
+		<span>EL TOTAL A PAGAR ES: </span> <span id = "pagar"></span><br>
+		<button >Hacer pedido</button>
+	</div>
 	<script src="L6.js"></script>
+	<h3>PREGUNTAS DEL LABORATORIO:</h3>
+	<table>
+		<tr>
+			<th style="color: rgba(23, 26, 103, 1);">PREGUNTAS</th>
+	    	<th style="color: rgba(23, 26, 103, 1);">RESPUESTAS</th>
+		</tr>
+		<tr>
+			<td>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</td>
+			<td>Al no tener que mandar la información al servidor se generan menos movimientos y ahorras tiempo y recursos por parte del servidor.</td>
+		</tr>
+		<tr>
+			<td>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</td>
+			<td>Desactivando la configuración de JavaScript u ovidar colocar los atributos de validación en los elementos del formulario.</td>
+		</tr>
+		<tr>
+			<td>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</td>
+			<td>A pesar de que se puedan "evitar" es importante asegurarse de que todos los controles de formulario requeridos esten en el formato correcto. La validación de formulario asegura que los datos que se envían coinciden con los requisitos establecidos en el formulario.</td>
+		</tr>
+	</table>
 </body>
 </html>

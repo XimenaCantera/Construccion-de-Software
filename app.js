@@ -25,6 +25,10 @@ const hockeyRutas = require('./routes/hockey.routes');
 
 app.use('/hockey', hockeyRutas);
 
+const rutasChilaquiles = require('./routes/chilaquiles.routes');
+
+app.use('/chilaquiles', rutasChilaquiles);
+
 app.use((request, response, next) => {
     console.log("Tercer middleware");
 

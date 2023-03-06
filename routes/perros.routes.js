@@ -1,12 +1,11 @@
+//Solo tieme las rutas y el controlador
+
 const express = require('express');
 
 const router = express.Router();
 
-const razas = ["Bueagle","Doberman", "Golden", "Husky", "Dálmata", "Chihuahua", "Chilakil", 
-"Pug", "<script>alert('Ya te hakie :)')</script>"]
+const perrosController = require('../controllers/perros.controller');
 
-router.get('/', (request, response, next) => {
-    response.render('lista',{razas: razas});
-});
+router.get('/', perrosController);
 
 module.exports = router;

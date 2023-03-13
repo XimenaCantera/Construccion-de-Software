@@ -2,6 +2,8 @@
 
 <h1 class="title">Razas de perros</h1>
 
+<button href ="/perros/nuevo" class="button is-link is-rounded">Registrar Perro</button><br><br>
+
 <% if (razas.length > 0) { %>
         <% for (let raza of razas) { %>
             <div class="card">
@@ -19,7 +21,7 @@
                         </div>
                         <div class="media-content">
                             <p class="title is-4"><%= raza %></p>
-                            <p class="subtitle is-6">@johnsmith</p>
+                            <p class="subtitle is-6">@ <%= nombre.Perro>  </p>
                         </div>
                     </div>
                 
@@ -36,6 +38,4 @@
 <% } else { %>
     <h1>No hay razas registradas</h1>
 <% } %>   
-
-
  <%- include('includes/footer.ejs') %>

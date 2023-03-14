@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://ejuarez@bitbucket.org/ejuarez/chilaquiles.git"
+    "url": "https://github.com/XimenaCantera/Construccion-de-Software.git"
   },
   "keywords": [
     "node",
@@ -19,9 +19,9 @@
   "author": "Ximena Cantera Reséndiz",
   "license": "MIT",
   "bugs": {
-    "url": "https://bitbucket.org/ejuarez/chilaquiles/issues"
+    "url": "https://github.com/XimenaCantera/Construccion-de-Software.git"
   },
-  "homepage": "https://bitbucket.org/ejuarez/chilaquiles#readme",
+  "homepage": "https://github.com/XimenaCantera/Construccion-de-Software.git",
   "devDependencies": {
     "nodemon": "^2.0.20"
   },

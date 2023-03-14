@@ -21,7 +21,7 @@ console.log("eje4.2").innerHTML = r2;
  //Recibir un string y escribir el string en un archivo de texto
  const filesystem = require('fs');
  filesystem.writeFileSync('Laboratorio8.txt', 'Pan con queso :D');
- console.log("El pan con queso fue cicinado y venidio con exito");
+ console.log("El pan con queso fue cocinado y venidio con exito");
  
  const http = require('http');
  

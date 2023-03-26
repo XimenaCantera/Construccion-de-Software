@@ -1,37 +1,41 @@
-//Hockey
 const express = require('express');
-const bodyParser = require('body-parser');
+ const bodyParser = require('body-parser');
+ 
+ const app = express();
+ 
+ app.use(bodyParser.urlencoded({extended: false}));
+ 
 
-const app = express();
-
-app.use(bodyParser.urlencoded({extended: false}));
-
-//Middleware
-app.use((request, response, next) => {
-    console.log('Middleware!');
-    next(); //Le permite a la petición avanzar hacia el siguiente middleware
+app.use('/', (request, response, next) => {
+     //response.send();
+     let html = `
+        <h1>¿Qué artista quieres conocer?'</h1>
+        <form action="/" method="POST">
+        <label for="jugador">Nombre del artista:</label>
+        <input type="text" id="jugador" name="jugador">
+        <input type="submit" value="Enviar">
+        </form>
+    `;
+    response.send(html);
 });
+ 
+//      MÓDULO 1-. Grupos      /grupo/nuevo
+const grupoRutas = require('./routes/grupos.routes');
 
-app.use((request, response, next) => {
-    console.log('Otro middleware!');
-    next();
-});
+app.use('/grupo', grupoRutas);
 
-app.use('/hola', (request, response, next) => {
-    response.send('Hola desde la ruta /hola');
-});
 
-const hockeyRutas = require('./routes/hockey.routes');
+//      MÓDULO 2-. Solistas      /solista/nuevo
+const solistaRutas = require('./routes/solistas.routes');
 
-app.use('/hockey', hockeyRutas);
+app.use('/solista', solistaRutas);
 
-app.use((request, response, next) => {
-    console.log("Tercer middleware");
 
+
+//ERROR 404
+ app.use((request, response, next) => {
     response.status(404);
-    
-    //Envía la respuesta al cliente
-    response.send('Lo sentimos, esta ruta no existe');
-});
-
-app.listen(3000);
+    response.send('¿A dónde intentas ir? No tienes que iniciar aquí -_-');
+ });
+ 
+ app.listen(8000)

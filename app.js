@@ -5,20 +5,11 @@ const express = require('express');
  
  app.use(bodyParser.urlencoded({extended: false}));
  
+ app.use((request, response, next) => {
+     console.log('Middleware!');
+     next(); //Le permite a la petición avanzar hacia el siguiente middleware
+ });
 
-app.use('/', (request, response, next) => {
-     //response.send();
-     let html = `
-        <h1>¿Qué artista quieres conocer?'</h1>
-        <form action="/" method="POST">
-        <label for="jugador">Nombre del artista:</label>
-        <input type="text" id="jugador" name="jugador">
-        <input type="submit" value="Enviar">
-        </form>
-    `;
-    response.send(html);
-});
- 
 //      MÓDULO 1-. Grupos      /grupo/nuevo
 const grupoRutas = require('./routes/grupos.routes');
 
@@ -35,7 +26,11 @@ app.use('/solista', solistaRutas);
 //ERROR 404
  app.use((request, response, next) => {
     response.status(404);
-    response.send('¿A dónde intentas ir? No tienes que iniciar aquí -_-');
+    let html = `
+        <h1>¿A dónde intentas ir? No tienes que iniciar aquí -_-</h1>
+        <br><img src="https://i.pinimg.com/564x/e3/5c/83/e35c83c38269d60ec602f06c2d11eb2e.jpg">
+    `;
+    response.send(html);
  });
  
  app.listen(8000)

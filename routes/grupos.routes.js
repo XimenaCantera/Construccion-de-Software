@@ -5,9 +5,12 @@ const router = express.Router();
 router.get('/nuevo', (request, response, next) => {
     
     let html = `
+        <h1>Agregando nuevo grupo</h1>
         <form action="/grupo/nuevo" method="POST">
-        <label for="jugador">Nombre del jugador:</label>
-        <input type="text" id="jugador" name="jugador">
+        <label for="jugador">Nombre del grupo:</label>
+        <input type="text" name="grupo"><br><br>
+        <label for="jugador">¿Cuántos integrantes son?:</label>
+        <input type="text" name="numIntegrantes">
         <input type="submit" value="Enviar">
         </form>
     `;
@@ -16,8 +19,8 @@ router.get('/nuevo', (request, response, next) => {
 
 router.post('/nuevo', (request, response, next) => {
     console.log(request.body);
-    console.log(request.body.jugador);
-    response.send("El jugador es: " + request.body.jugador);
+    console.log(request.body.grupo);
+    response.send("El nuevo artista es: " + request.body.grupo);
 });
 
 module.exports = router;

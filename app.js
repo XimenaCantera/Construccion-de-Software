@@ -27,8 +27,12 @@ app.use('/solista', solistaRutas);
  app.use((request, response, next) => {
     response.status(404);
     let html = `
-        <h1>¿A dónde intentas ir? No tienes que iniciar aquí -_-</h1>
-        <br><img src="https://i.pinimg.com/564x/e3/5c/83/e35c83c38269d60ec602f06c2d11eb2e.jpg">
+        <body class="selection:bg-pink-300  bg-green-500"> 
+        <script src="https://cdn.tailwindcss.com"></script>
+            <p class="font-mono text-2xl underline decoration-red-500"> ¿A dónde intentas ir? No tienes que iniciar aquí -_-</p>
+            <br>
+            <img class="scale-50 float-center rounded-md" src="https://i.pinimg.com/564x/e3/5c/83/e35c83c38269d60ec602f06c2d11eb2e.jpg">
+        </body>
     `;
     response.send(html);
  });

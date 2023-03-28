@@ -1,13 +1,10 @@
-const express = require('express');
-
-const router = express.Router();
-
-router.get('/nuevo', (request, response, next) => {
-    
-    let html = `
-    <script src="https://cdn.tailwindcss.com"></script>
-    <body class ="bg-green-500">
-    <nav class="bg-green-800">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Premios</title>
+</head>
+<body class="bg-green-100 font-mono">
+<nav class="bg-green-800">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -30,7 +27,6 @@ router.get('/nuevo', (request, response, next) => {
               </div>
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a>
 
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Grupo</a>
@@ -50,7 +46,7 @@ router.get('/nuevo', (request, response, next) => {
           </div>
         </div>
       </div>
-
+      
       <div class="sm:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3">
           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -59,32 +55,25 @@ router.get('/nuevo', (request, response, next) => {
           <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Grupo</a>
 
           <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Solista</a>
-
-          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
         </div>
       </div>
-    </nav>
+    </nav><br>
 
+<h1 class="title">Premios de los artistas</h1>
 
-    <br><p class="font-mono text-3xl"> Nuevos grupos </p>
-        <br>
-        <br>
-        <form action="/grupo/nuevo" method="POST">
-        <label class="font-mono text-slate-50">Nombre del grupo:</label>
-        <input type="text" class="border-2 border-slate-500" name="grupo"><br><br>
-        <label class="font-mono text-slate-50">¿Cuántos integrantes son?:</label>
-        <input type="text" class="border-2 border-slate-500 name="numIntegrantes">
-        <input type="submit" value="Enviar">
-        </form>
-    </body>
-    `;
-    response.send(html);
-});
+<% if (premios.length > 0) { %>
+        <% for (let premio of premios) { %>
+            <div class="card">
+                <img class="float-none ..." src="path/to/image.jpg">
+				<p>Maybe we can live without libraries, people like you and me.</p>
+                        <div class="media-content">
+                            <p class="text-xl"><%= premio %></p>
+                        </div>
+            </div>
+        <% } %>
+<% } else { %>
+    <h1>No hay próximos premios! :"(</h1>
+<% } %>   
 
-router.post('/nuevo', (request, response, next) => {
-    console.log(request.body);
-    console.log(request.body.grupo);
-    response.send("El nuevo artista es: " + request.body.grupo);
-});
-
-module.exports = router;
+</body>
+</html>

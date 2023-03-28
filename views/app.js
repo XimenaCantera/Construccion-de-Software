@@ -5,8 +5,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
  
 const app = express();
+
+//Mandar de manera estática.
+app.use(express.static(path.join(__dirname, 'public')));
  
 app.use(bodyParser.urlencoded({extended: false}));
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
  
  //Middleware
 app.use((request, response, next) => {
@@ -19,7 +25,7 @@ app.use((request, response, next) => {
 const solistaRutas = require('./routes/solistas.routes');
 app.use('/solista', solistaRutas);
 
-//            grupo/nuevo
+//            grupo/nuevo -> lista.ejs
 const grupoRutas = require('./routes/grupos.routes');
 app.use('/grupo', grupoRutas);
 

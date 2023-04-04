@@ -20,7 +20,7 @@ app.use((request, response, next) => {
     next(); 
  });
 
-//            /solistas/nuevo 
+//            /solista/nuevo 
 const solistaRutas = require('./routes/solistas.routes');
 app.use('/solista', solistaRutas);
 

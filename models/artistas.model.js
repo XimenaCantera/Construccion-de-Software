@@ -1,3 +1,5 @@
+const baseDatos = require('../util/database');
+
 const artistas = [
   {
   	nombre :"Stray Kids",
@@ -54,7 +56,7 @@ module.exports = class Artista {
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        return artistas;
+      return baseDatos.execute('SELECT * FROM artistas');
     }
 
 }

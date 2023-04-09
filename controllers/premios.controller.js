@@ -28,8 +28,16 @@ exports.listar = (request, response, next) => {
     consulta++;
     response.setHeader('Set-Cookie', 'consulta=' + consulta + '; HttpOnly');
     
-    response.render('lista',{ 
-        premios: Artista.fetchAll(),
-        ultimoArtista:request.session.ultimoArtista || '',
-    });
+    Artista.fetchAll()
+    .then(([rows, fieldData]) => {
+        console.log(rows);
+
+        response.render('lista', {
+            premios: rows,
+            ultimoArtista:request.session.ultimoArtista || '',
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        });
 };

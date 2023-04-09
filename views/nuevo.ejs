@@ -1,0 +1,23 @@
+<%- include('includes/head.ejs') %>
+
+<h1 class="text-2xl font-bold m-8">Registro del artista</h1>
+
+<form action="/premios/nuevo" class="m-8" method="POST">
+
+    <label for="nombre">Nombre del grupo/solista:</label>
+    <input required name="nombre" id="nombre" class="input is-rounded border border-black" type="text">
+    <br><br>
+    <label for="premio">Premio:</label>
+    <input name="premio" id="premio" class="input is-rounded border border-black" type="text">
+    <br><br>
+    <label for="ubicacion">Ubicación:</label>
+    <input name="ubicacion" id="ubicacion" class="input is-rounded border border-black" type="text">
+    <br><br>
+    <label for="descripcion">Descripcion:</label>
+    <input name="descripcion" id="descripcion" class="input is-rounded border border-black" type="text">
+    <br><br>
+    <input class="button is-rounded is-success is-rounded bg-emerald-500 border-4 border-emerald-500 m-8 rounded-md text-slate-100" type="submit" value="Registrar">
+
+</form>
+
+<%- include('includes/foot.ejs') %>

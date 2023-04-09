@@ -1,10 +1,17 @@
-//SOLISTAS, GRUPOS y GUSTOS
+//SOLISTAS, GRUPOS, GUSTOS Y PREMIOS
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const session = require('express-session');
  
 const app = express();
+
+app.use(session({
+    secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
 
 //Mandar de manera estática.
 app.use(express.static(path.join(__dirname, 'public')));
@@ -15,10 +22,14 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
  
  //Middleware
-app.use((request, response, next) => {
+/*app.use((request, response, next) => {
     console.log('Middleware!');
     next(); 
- });
+ });*/
+
+const usuarioRutas = require('./routes/usuarios.routes');
+
+app.use('/usuarios', usuarioRutas);
 
 //            /solista/nuevo 
 const solistaRutas = require('./routes/solistas.routes');

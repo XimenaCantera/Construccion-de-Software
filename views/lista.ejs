@@ -34,5 +34,11 @@
     <h1>No hay próximos premios!</h1>
 <% } %>
 
+<!--MUESTRA LA ÚLTIMA COOKIE GUARDADA-->
+<% if (ultimoArtista != '') { %>
+    <div class="notification is-link is-light">
+        Último artista dado de alta: <%= ultimoArtista %>
+    </div>
+<% } %>
 
 <%- include('includes/foot.ejs') %>

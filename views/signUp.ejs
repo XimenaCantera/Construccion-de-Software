@@ -1,0 +1,20 @@
+<%- include('includes/head.ejs') %>
+
+<h1 class="text-2xl font-bold fixed top-28 right-2/4">SIGN UP</h1>
+
+<form action="/usuarios/signup" class="fixed top-52 mx-24" method="POST">
+
+    <label for="nombre">Nombre:</label>
+    <input name="nombre" id="nombre" class="input is-rounded border border-black" type="text">
+    <br><br>
+    <label for="user">Usuario:</label>
+    <input name="user" id="user" class="input is-rounded border border-black" type="text">
+    <br><br>
+    <label for="password">Contraseña:</label>
+    <input name="password" id="password" class="input is-rounded border border-black" type="password">
+    <br><br>
+    <input class="button is-rounded is-success is-rounded bg-emerald-500 border-4 border-emerald-500 m-8 rounded-md text-slate-100" type="submit" value="sign Up">
+
+</form>
+
+<%- include('includes/foot.ejs') %>

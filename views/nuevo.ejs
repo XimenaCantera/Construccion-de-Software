@@ -7,15 +7,9 @@
     <label for="nombre">Nombre del grupo/solista:</label>
     <input required name="nombre" id="nombre" class="input is-rounded border border-black" type="text">
     <br><br>
-    <div class="select is-primary">
-        <label for="premio">Premiaciones:</label>
-        <select name="premio" id="premio" class="input is-rounded border border-black">
-            <% for (let premio of premios) { %>
-                <option value="<%= premio.id %>"><%= premio.nombre %></option>
-            <% } %>
-        </select>
-    </div>
-    <br>
+    <label for="premio">Premio:</label>
+    <input name="premio" id="premio" class="input is-rounded border border-black" type="text">
+    <br><br>
     <label for="ubicacion">Ubicación:</label>
     <input name="ubicacion" id="ubicacion" class="input is-rounded border border-black" type="text">
     <br><br>

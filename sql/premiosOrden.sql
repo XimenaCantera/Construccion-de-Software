@@ -10,7 +10,7 @@ USE premiosOrden;
 
 
 CREATE TABLE PREMIOS (
-  id int NOT NULL ,
+  id INT NOT NULL ,
   nombre VARCHAR(80) NOT NULL,
   PRIMARY KEY (id)
 );

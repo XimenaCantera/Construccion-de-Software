@@ -6,32 +6,33 @@ const bcrypt = require('bcryptjs');
 module.exports = class Artista {
 
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
-    constructor(nuevo_artista) {
-        this.nombre = nuevo_artista.nombre || '';
-        this.premio = nuevo_artista.premio || '';
-        this.foto = nuevo_artista.foto || 'https://i.pinimg.com/564x/f4/3c/35/f43c35d5009f0883e6875dcc25a76fa7.jpg';
-        this.ubicacion = nuevo_artista.ubicacion || '';
-        this.descripcion = nuevo_artista.descripcion || '';
-    }
+    constructor(nuevoArtista) {
+      this.nombre = nuevoArtista.nombre || '';
+      this.premio = nuevoArtista.premio || 'Siguen las votaciones.';
+      this.foto = nuevoArtista.foto || 'https://i.pinimg.com/564x/f4/3c/35/f43c35d5009f0883e6875dcc25a76fa7.jpg';
+      this.ubicacion = nuevoArtista.ubicacion || 'Sigue en decisión.';
+      this.descripcion = nuevoArtista.descripcion || 'Siguen las votaciones de los fans.';
+  }
+//GUARDAR LOS ARTISTAS NUEVOS
+  save() {
+      return baseDatos.execute('INSERT INTO artistas (nombre, foto, ubicacion, descripcion, idPremio) values (?,?,?,?,?)', [this.nombre, this.foto, this.ubicacion, this.descripcion, this.premio]);
+  }
 
-    save() {
-        return baseDatos.execute('INSERT INTO artistas (nombre, premio, foto, ubicacion, descripcion) values (?,?,?,?,?)', [this.nombre, this.premio, this.foto, this.ubicacion, this.descripcion]);
-    }
+  static fetchAll() {
+    return baseDatos.execute('SELECT * FROM artistas');
+  }
 
-    static fetchAll() {
-      return baseDatos.execute('SELECT * FROM artistas');
-    }
+//IMPRIME LOS ARTISTAS
 
-
-    static fetchOne(id) {
-      return baseDatos.execute(
-        `SELECT a.nombre, a.remio, a.foto, a.ubicacion, a.descripcion, p.nombre as premio 
-         FROM artista a, premio p
-         WHERE a.idPremio = p.id AND a.id = ?
-        `, [id]
-      );
-    }
-      
+  static fetchOne(id) {
+    return baseDatos.execute(
+      `SELECT a.nombre, a.foto, a.ubicacion, a.descripcion, p.nombre as premio 
+       FROM artistas a, premios p
+       WHERE a.idPremio = p.id
+      `, [id]
+    );
+  }
+  
     static fetch(id) {
         if (id) {
             return Artista.fetchOne(id);

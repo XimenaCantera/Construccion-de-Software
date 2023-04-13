@@ -41,6 +41,6 @@ exports.post_signup = (request, response, next) => {
 
 exports.logout = (request, response, next) => {
     request.session.destroy(() => {
-        response.redirect('/usuarios/login'); //Este código se ejecuta cuando la sesión se elimina.
+        response.redirect('/usuarios/login'); //Este código se ejecuta al final.
     });
 };

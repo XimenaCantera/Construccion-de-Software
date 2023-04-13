@@ -16,7 +16,7 @@ exports.post_nuevo = (request, response, next) => {
     const artista = new Artista({
         nombre: request.body.nombre,
         premio: request.body.premio,
-        ubicacion: request.body.premio,
+        ubicacion: request.body.ubicacion,
         descripcion: request.body.descripcion,
     });
 

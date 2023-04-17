@@ -29,7 +29,13 @@ CREATE TABLE ARTISTAS (
 );
 
 
-
+CREATE TABLE USUARIOS (
+  id int NOT NULL,
+  nombre VARCHAR(50) NOT NULL,
+  user VARCHAR(10) NOT NULL, 
+  passwort VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id)
+);
 
 -- --------------------------------------------------------
 -- INSERTAR DATOS

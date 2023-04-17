@@ -8,6 +8,9 @@ const premiosController = require('../controllers/premios.controller');
 router.get('/nuevo', premiosController.get_nuevo);
 router.post('/nuevo', premiosController.post_nuevo);
 
+//RUTA DINÁMICA
+router.get('/:id', premiosController.listar);
+
 router.get('/', premiosController.listar);
 
 module.exports = router;
